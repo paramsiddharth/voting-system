@@ -26,16 +26,9 @@ function AppLayout() {
   </>;
 }
 
-/* const router = createBrowserRouter([
-  createRoutesFromElements(
-    
-  )
-]); */
-
 function App() {
   return (
     <div className="App">
-      {/* <RouterProvider router={router} /> */}
       <BrowserRouter>
         <Routes>
           <Route path='/' errorElement={<NotFound />} element={<AppLayout />}>
