@@ -7,7 +7,7 @@ function Logout({ setToken }) {
   useEffect(() => {
     setToken(null);
     return navigate('/');
-  });
+  }, []);
 
   return <>
     <h2>Logout</h2>

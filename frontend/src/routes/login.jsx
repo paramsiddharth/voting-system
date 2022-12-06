@@ -10,7 +10,7 @@ function Login({ token, setToken }) {
     if (token != null) {
       navigate('/');
     }
-  });
+  }, []);
 
   async function login() {
     setToken('<token>');

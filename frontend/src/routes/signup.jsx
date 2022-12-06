@@ -10,7 +10,7 @@ function SignUp({ token, setToken }) {
     if (token != null) {
       navigate('/');
     }
-  });
+  }, []);
 
   async function signUp() {
     setToken('<token>');
