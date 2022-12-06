@@ -4,6 +4,7 @@ import {
   Routes,
   Outlet
 } from 'react-router-dom';
+import useLocalStorage from 'use-local-storage';
 
 import './App.css';
 
@@ -15,10 +16,11 @@ import NotFound from './routes/404';
 import Login from './routes/login';
 import SignUp from './routes/signup';
 import Election from './routes/election';
+import Logout from './routes/logout';
 
-function AppLayout() {
+function AppLayout({ token, setToken }) {
   return <>
-    <Header />
+    <Header token={token} setToken={setToken} />
     <Main>
       <Outlet />
     </Main>
@@ -27,13 +29,16 @@ function AppLayout() {
 }
 
 function App() {
+  const [token, setToken] = useLocalStorage('token');
+
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path='/' errorElement={<NotFound />} element={<AppLayout />}>
+          <Route path='/' errorElement={<NotFound />} element={<AppLayout token={token} setToken={setToken} />}>
             <Route path='' element={<Home />} />
             <Route path='login' element={<Login />} />
+            <Route path='logout' element={<Logout setToken={setToken} />} />
             <Route path='register' element={<SignUp />} />
             <Route path='election/:id' element={<Election />} />
             <Route path='*' element={<NotFound />} />

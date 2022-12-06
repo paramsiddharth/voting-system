@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-function Header() {
+function Header({ token }) {
   return <>
     <Link to='/'>
       <h1>Voting System</h1>
@@ -10,7 +10,12 @@ function Header() {
       &nbsp;
       |
       &nbsp;
-      <Link to='/login'>Login</Link>
+      {token}
+      {
+        token
+          ? <Link to='/logout'>Logout</Link>
+          : <Link to='/login'>Login</Link>
+      }
       &nbsp;
       |
       &nbsp;
