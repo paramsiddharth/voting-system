@@ -1,6 +1,6 @@
 function Home() {
   return <>
-    <h2>Hello world!</h2>
+    <h2>Welcome to the voting system.</h2>
   </>;
 }
 
