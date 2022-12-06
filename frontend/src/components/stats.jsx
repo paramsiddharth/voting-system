@@ -1,4 +1,4 @@
-function Statistics({ data, cast }) {
+function Statistics({ processing, data, cast }) {
   const {
     desc,
     total,
@@ -7,8 +7,9 @@ function Statistics({ data, cast }) {
 
   function display(d) {
     return d.map(({ id, desc, count, voted }, i) => {
-      return <div className='option' key={i}>
+      return <div {...{ className: 'option' + (processing ? ' processing' : '') }} key={i}>
         <button
+          disabled={processing}
           onClick={() => cast(id)}
           {...{ className: voted ? 'invert' : '' }}>
           { voted ? 'Revoke' : 'Vote' }

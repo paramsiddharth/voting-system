@@ -70,3 +70,7 @@ a h1 {
 .invert {
   filter: invert();
 }
+
+.processing {
+  filter: blur(1px);
+}
