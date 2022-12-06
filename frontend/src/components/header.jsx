@@ -1,6 +1,10 @@
+import { Link } from 'react-router-dom';
+
 function Header() {
   return <>
-    <h1>Voting System</h1>
+    <Link to='/'>
+      <h1>Voting System</h1>
+    </Link>
   </>;
 }
 
