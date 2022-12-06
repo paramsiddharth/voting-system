@@ -1,9 +1,9 @@
 function Footer() {
-	return <>
-		<p>
+    return <>
+        <p>
 			&copy; 2022
-		</p>
-	</>;
+        </p>
+    </>;
 }
 
-export default Footer
+export default Footer;

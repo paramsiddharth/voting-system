@@ -1,7 +1,7 @@
 function Main({ children }) {
-	return <>
-		{ children }
-	</>
+    return <>
+        { children }
+    </>;
 }
 
-export default Main
+export default Main;
