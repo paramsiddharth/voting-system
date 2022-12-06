@@ -1,12 +1,17 @@
-import { useState } from 'react';
+import Header from './components/header';
+
 import './App.css';
+import Footer from './components/footer';
+import Main from './components/main';
 
 function App() {
-    const [count, setCount] = useState(0);
-
     return (
         <div className="App">
-            <h1>Voting System</h1>
+            <Header />
+            <Main>
+                
+            </Main>
+            <Footer />
         </div>
     );
 }
