@@ -10,16 +10,17 @@ function Header({ token }) {
       &nbsp;
       |
       &nbsp;
-      {token}
       {
         token
           ? <Link to='/logout'>Logout</Link>
-          : <Link to='/login'>Login</Link>
+          : <>
+            <Link to='/login'>Login</Link>
+            &nbsp;
+            |
+            &nbsp;
+            <Link to='/register'>Sign Up</Link>
+          </>
       }
-      &nbsp;
-      |
-      &nbsp;
-      <Link to='/register'>Sign Up</Link>
     </nav>
   </>;
 }

@@ -37,9 +37,9 @@ function App() {
         <Routes>
           <Route path='/' errorElement={<NotFound />} element={<AppLayout token={token} setToken={setToken} />}>
             <Route path='' element={<Home />} />
-            <Route path='login' element={<Login />} />
+            <Route path='login' element={<Login token={token} setToken={setToken} />} />
             <Route path='logout' element={<Logout setToken={setToken} />} />
-            <Route path='register' element={<SignUp />} />
+            <Route path='register' element={<SignUp token={token} setToken={setToken} />} />
             <Route path='election/:id' element={<Election />} />
             <Route path='*' element={<NotFound />} />
           </Route>
