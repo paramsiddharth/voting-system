@@ -8,8 +8,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "lint": "eslint \"**/*.js\"",
-    "lint:fix": "eslint --fix \"**/*.js\""
+    "lint": "eslint \"**/*.{js,jsx}\"",
+    "lint:fix": "eslint --fix \"**/*.{js,jsx}\""
   },
   "dependencies": {
     "react": "^18.2.0",
