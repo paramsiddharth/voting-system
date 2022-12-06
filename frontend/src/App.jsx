@@ -40,7 +40,7 @@ function App() {
             <Route path='login' element={<Login token={token} setToken={setToken} />} />
             <Route path='logout' element={<Logout setToken={setToken} />} />
             <Route path='register' element={<SignUp token={token} setToken={setToken} />} />
-            <Route path='election/:id' element={<Election />} />
+            <Route path='election/:id' element={<Election token={token} />} />
             <Route path='*' element={<NotFound />} />
           </Route>
         </Routes>

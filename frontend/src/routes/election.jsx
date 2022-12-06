@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { FallingLines } from 'react-loader-spinner';
 
 import Statistics from '../components/stats';
@@ -29,9 +29,10 @@ async function getData(id) {
   };
 }
 
-function Election() {
+function Election({ token }) {
   const { id } = useParams();
   const [data, setData] = useState(null);
+  const navigate = useNavigate();
 
   async function cast(opt) {
     let total = 0;
@@ -71,6 +72,10 @@ function Election() {
   }
 
   useEffect(() => {
+    if (token == null) {
+      return navigate('/login');
+    }
+
     setTimeout(async () => {
       const receivedData = await getData();
       setData(receivedData);

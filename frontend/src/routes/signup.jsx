@@ -6,11 +6,14 @@ function SignUp({ token, setToken }) {
   const [pwd, setPwd] = useState('');
   const navigate = useNavigate();
 
-  useEffect(() => {
+  const handler = () => {
     if (token != null) {
       navigate('/');
     }
-  }, []);
+  };
+
+  useEffect(handler, []);
+  useEffect(handler, [token]);
 
   async function signUp() {
     setToken('<token>');
