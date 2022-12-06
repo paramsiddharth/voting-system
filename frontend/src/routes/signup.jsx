@@ -1,14 +1,18 @@
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 
 function SignUp({ token, setToken }) {
   const [email, setEmail] = useState('');
   const [pwd, setPwd] = useState('');
   const navigate = useNavigate();
+  // eslint-disable-next-line no-unused-vars
+  const [params, _] = useSearchParams({ redirectTo: '/' });
+
+  const redirectTo = params.get('redirectTo');
 
   const handler = () => {
     if (token != null) {
-      navigate('/');
+      navigate(redirectTo);
     }
   };
 
@@ -17,6 +21,7 @@ function SignUp({ token, setToken }) {
 
   async function signUp() {
     setToken('<token>');
+    navigate(redirectTo);
   }
 
   return <>

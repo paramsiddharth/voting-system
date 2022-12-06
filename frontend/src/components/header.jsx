@@ -1,6 +1,11 @@
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 
 function Header({ token }) {
+  // eslint-disable-next-line no-unused-vars
+  const [params, _] = useSearchParams();
+
+  const redirectTo = params.get('redirectTo');
+
   return <>
     <Link to='/'>
       <h1>Voting System</h1>
@@ -14,11 +19,11 @@ function Header({ token }) {
         token
           ? <Link to='/logout'>Logout</Link>
           : <>
-            <Link to='/login'>Login</Link>
+            <Link to={`/login${redirectTo == null ? '' : `?redirectTo=${encodeURIComponent(redirectTo)}`}`}>Login</Link>
             &nbsp;
             |
             &nbsp;
-            <Link to='/register'>Sign Up</Link>
+            <Link to={`/register${redirectTo == null ? '' : `?redirectTo=${encodeURIComponent(redirectTo)}`}`}>Sign Up</Link>
           </>
       }
     </nav>

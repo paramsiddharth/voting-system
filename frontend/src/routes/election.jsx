@@ -73,7 +73,7 @@ function Election({ token }) {
 
   useEffect(() => {
     if (token == null) {
-      return navigate('/login');
+      return navigate(`/login?redirectTo=${encodeURIComponent('/election/' + id)}`);
     }
 
     setTimeout(async () => {
