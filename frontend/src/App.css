@@ -68,9 +68,11 @@ a h1 {
 }
 
 .invert {
+  transition: all 0.1s;
   filter: invert();
 }
 
 .processing {
+  transition: all 0.1s;
   filter: blur(1px);
 }
