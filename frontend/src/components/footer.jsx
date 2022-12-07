@@ -1,7 +1,7 @@
 function Footer() {
   return <>
     <p>
-			&copy; Param Siddharth and team 2022-{ new Date().getFullYear() }
+			&copy; 2022
     </p>
   </>;
 }
