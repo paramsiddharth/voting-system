@@ -1,19 +1,25 @@
 const SAMPLE = {
   id: 1,
-  desc: 'Why is Param famous?',
-  total: 51,
+  desc: 'Should we give legal recognition to same-sex adoption?',
+  // total: 81,
   options: [
     {
       id: 1,
-      desc: 'He isn\'t.',
+      desc: 'Yes',
       count: 45,
-      voted: false
+      voted: true
     },
     {
       id: 2,
-      desc: 'Because he\'s awesome!',
+      desc: 'No',
       count: 6,
-      voted: true
+      voted: false
+    },
+    {
+      id: 3,
+      desc: 'Don\'t know',
+      count: 30,
+      voted: false
     }
   ]
 };
@@ -25,7 +31,8 @@ export async function getElection(id) {
 
   return {
     ...SAMPLE,
-    id
+    id,
+    total: SAMPLE.options.reduce((a, b) => ({ count: a.count + b.count }), { count: 0 }).count
   };
 }
 
